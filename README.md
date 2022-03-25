@@ -24,7 +24,7 @@ Download Image: [ROS Noetic Ubuntu 20.04](https://drive.google.com/file/d/1EGy9g
   5. Once the turtlebot is rebooted, change the hostname and reinstall tailscale:
     <pre>
     sudo apt-get install tailscale
-    sudo tailscale up --authkey=<ask pito for the tailscale key to put here>
+    sudo tailscale up --authkey=<i>ask-pito-for-code</i>
     </pre>
   6. Now update the OpenCR board with the following commands:
     <pre>
