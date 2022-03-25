@@ -16,11 +16,11 @@ Download Image: [ROS Noetic Ubuntu 20.04](https://drive.google.com/file/d/1EGy9g
   
     sudo apt-get remove tailscale
     sudo rm /var/lib/tailscale/tailscaled.state
+    sudo nano /etc/hostname # edit this file to change the hostname from "roba" to your robot's name
     sudo reboot now
 
   5. Once the turtlebot is rebooted, change the hostname and reinstall tailscale:
   
-    "use whichever method you like to change the hostname"
     sudo apt-get install tailscale
     sudo tailscale up --authkey=<ask pito for the tailscale key to put here>
     
