@@ -13,25 +13,27 @@ Download Image: [ROS Noetic Ubuntu 20.04](https://drive.google.com/file/d/1EGy9g
   3. Log into the turtlebot with the username: *ubuntu* and the password: *ROSlab134*
   
   4. You will want to remove the tailscale information using the following commands:
-  
+    <pre>
     sudo apt-get remove tailscale
     sudo rm /var/lib/tailscale/tailscaled.state
-    sudo nano /etc/hostname # edit this file to change the hostname from "roba" to your robot's name
+    sudo nano /etc/hostname 
+    <i># change the hostname in this file from "roba" to your robot's name</i>
     sudo reboot now
+    </pre>
 
   5. Once the turtlebot is rebooted, change the hostname and reinstall tailscale:
-  
+    <pre>
     sudo apt-get install tailscale
     sudo tailscale up --authkey=<ask pito for the tailscale key to put here>
-    
+    </pre>
   6. Now update the OpenCR board with the following commands:
-  
+    <pre>
     export OPENCR_PORT=/dev/ttyACM0
-    export OPENCR_MODEL=burger_noetic
+    export OPENCR_MODEL=burger_noetic <i># or waffle_noetic if you have a waffle tb3</i>
     rm -rf ./opencr_update.tar.bz2
     wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS1/latest/opencr_update.tar.bz2 
     tar -xvf opencr_update.tar.bz2 
     cd ./opencr_update
     ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
-    
+    </pre>
   7. Once the OpenCR board is updated, shut down your bot and turn it back on and you are done with the setup.
